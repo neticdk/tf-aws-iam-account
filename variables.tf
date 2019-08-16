@@ -10,8 +10,14 @@ variable "tags" {
   default     = {}
 }
 
+variable "create_account_alias" {
+  description = "Create account alias"
+  default     = true
+}
+
 variable "account_alias" {
   description = "The account alias for the AWS Account"
+  default     = null
 }
 
 variable "minimum_password_length" {
