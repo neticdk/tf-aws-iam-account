@@ -5,12 +5,6 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-locals {
-  tags = {
-    Terraform = "true"
-  }
-}
-
 resource "aws_iam_account_password_policy" "this" {
   minimum_password_length        = var.minimum_password_length
   max_password_age               = var.max_password_age
