@@ -2,13 +2,13 @@
 
 ## Supported Terraform Versions
 
-Terraform 0.12
+Terraform >= 1.15, AWS provider ~> 6.0
 
 ## Usage
 
 ```hcl
 module "aws_account" {
-  source = "github.com/neticdk/tf-aws-iam-account"
+  source = "github.com/neticdk/tf-aws-iam-account?ref=v2.0.0"
 
   account_alias = "My Account"
 
@@ -29,15 +29,15 @@ module "aws_account" {
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
 | account\_alias | The account alias for the AWS Account | string | n/a | yes |
-| allow\_users\_to\_change\_password | Whether to allow users to change their own password | string | `"true"` | no |
-| hard\_expiry | Whether users are prevented from setting a new password after their password has expired (i.e. require administrator reset) | string | `"false"` | no |
-| max\_password\_age | The number of days that an user password is valid | string | `"365"` | no |
-| minimum\_password\_length | Minimum length to require for user passwords | string | `"12"` | no |
-| password\_reuse\_prevention | The number of previous passwords that users are prevented from reusing | string | `"1"` | no |
-| require\_lowercase\_characters | Whether to require lowercase characters for user passwords | string | `"false"` | no |
-| require\_numbers | Whether to require numbers for user passwords | string | `"false"` | no |
-| require\_symbols | Whether to require symbols for user passwords | string | `"false"` | no |
-| require\_uppercase\_characters | Whether to require uppercase characters for user passwords | string | `"false"` | no |
+| allow\_users\_to\_change\_password | Whether to allow users to change their own password | bool | `"true"` | no |
+| hard\_expiry | Whether users are prevented from setting a new password after their password has expired (i.e. require administrator reset) | bool | `"false"` | no |
+| max\_password\_age | The number of days that an user password is valid | number | `"365"` | no |
+| minimum\_password\_length | Minimum length to require for user passwords | number | `"12"` | no |
+| password\_reuse\_prevention | The number of previous passwords that users are prevented from reusing | number | `"1"` | no |
+| require\_lowercase\_characters | Whether to require lowercase characters for user passwords | bool | `"false"` | no |
+| require\_numbers | Whether to require numbers for user passwords | bool | `"false"` | no |
+| require\_symbols | Whether to require symbols for user passwords | bool | `"false"` | no |
+| require\_uppercase\_characters | Whether to require uppercase characters for user passwords | bool | `"false"` | no |
 | tags | A map of tags to add to all resources | map | `<map>` | no |
 
 <!---END OF PRE-COMMIT-TERRAFORM DOCS HOOK--->
